@@ -1,0 +1,29 @@
+
+
+/**
+ * 公共样式
+ **/
+
+.fl{
+	float: left;
+}
+
+.fr{
+	float: right;
+}
+
+.hide{
+	display: none;
+}
+
+.inline{
+	display: inline-block;
+}
+
+.block{
+	display: block;
+}
+
+a{
+	text-decoration: none;
+}

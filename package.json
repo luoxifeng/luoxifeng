@@ -1,0 +1,27 @@
+{
+	"name": "luoxifeng",
+	"version": "1.0.0",
+	"description": "my site ",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "cross_env"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/luoxifeng/luoxifeng.git"
+	},
+	"keywords": [
+		"my",
+		"site"
+	],
+	"author": "guoying",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/luoxifeng/luoxifeng/issues"
+	},
+	"homepage": "https://github.com/luoxifeng/luoxifeng#readme",
+	"devDependencies": {
+		"express": "^4.15.2"
+	}
+}

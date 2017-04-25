@@ -1,0 +1,189 @@
+
+html, body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	background: #333333;
+	overflow: hidden;
+}
+
+.time{
+	color: #fff;
+	font-size: 28px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 20px;
+}
+
+canvas{
+	position: absolute;
+	z-index: -1;
+	top: 0;
+}
+
+.container{
+	width: 1000px;
+	margin: 0 auto;
+	/* overflow: hidden; */
+	height: 100%;
+}
+
+.gear-wrapper{
+	height: 500px;
+	width: 500px;
+	position: relative;
+
+	top: 50%;
+	
+	margin-top: -250px;
+
+	background-image: url(../img/gear01.png);
+	background-size: 100%;
+	border-radius: 100%;
+	overflow: hidden;
+	
+
+}
+.gear-wrapper.gw-02{
+	margin-left: -10px;
+}
+
+/*顺时针旋转*/
+.rotating{
+	-webkit-animation: rotatingAnimate 10s linear infinite;
+}
+
+/*逆时针旋转*/
+.reverse{
+	-webkit-animation: reverseAnimate 10s linear infinite;
+}
+
+@-webkit-keyframes rotatingAnimate{
+	from{
+		transform: rotateZ(0);
+	}
+	to{
+		transform: rotateZ(360deg);
+	}
+}
+
+@-webkit-keyframes reverseAnimate{
+	from{
+		transform: rotateZ(0);
+	}
+	to{
+		transform: rotateZ(-360deg);
+	}
+}
+
+
+.gear-inner{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	
+	border-radius: 100%;
+}
+.gear-inner.on{
+	-webkit-animation: reverseAnimate 10s linear  infinite ;
+}
+
+.gear-wrapper.gw-02 .gear-inner.on{
+	-webkit-animation: rotatingAnimate 10s linear infinite ;
+}
+
+
+
+.gear-inner .project{
+	width: 70px;
+	height: 70px;
+	text-align: center;
+	line-height: 70px;
+	border-radius: 100px;
+	display: block;
+	position: absolute;
+	top: 50%;
+	margin-top: -35px;
+	background: #333333;
+	color: #fff;
+    box-shadow: inset -1px 1px 4px 2px #444, inset 1px -1px 4px 2px #222;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	transition: all 1s;
+
+	transform-origin: 200px 35px;
+	transform: rotateZ(0deg);
+	-webkit-animation: bs linear 2s 1.3s infinite;
+
+}
+
+.pro{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: #333333;
+    text-align: center;
+    /* line-height: 130px; */
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    margin-left: -65px;
+    margin-top: -65px;
+    border-radius: 100%;
+    transform: scale(0);
+    transition: all 1s;
+    box-shadow: 0 0 3px 10px rgba(255, 255,255,.5);
+    padding: 20px;
+}
+.pro:before{
+	display: inline-block;
+	vertical-align: middle;
+	content: "";
+	width: 0;
+	height: 100%;
+}
+
+.pro.on{
+	transform: scale(1);
+}
+
+.pro span{
+	display: inline-block;
+	vertical-align: middle;
+
+}
+
+.gear-inner .project:hover{
+	background: #333333;
+}
+
+.gear-inner .project .name{
+	display: block;
+}
+
+
+
+@-webkit-keyframes bs {
+  0% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 0px 0 #b2ff1a;
+  }
+
+  50% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 20px 0 #1affff;
+  }
+
+  100% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 0px 0 #b2ff1a;
+  }
+}
+
+
