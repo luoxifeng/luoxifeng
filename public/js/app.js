@@ -39,10 +39,10 @@ $(function(argument){
 				var html = '';
 				$.each(prolist, function(index, item){
 					html = html
-					+	'<a href="' + item.href + '" class="project J-Project" '
-					+		'style="bacbgroud-color:' + item.back + '" '
+					+	'<a data-href="' + item.href + '" data-disabled="' + (item.usable === false)+ '" target="_blank" class="project J-Project" '
+					+		'style="backgroud-color:' + item.back + '" '
 					+		'data-name="' + item.name + '">'
-					+		'<span class="name JP-Name">' + item.icon + '</span>'
+					+		'<span class="name JP-Name"><img src="' + item.icon + '"/></span>'
 					+	'</a>';
 				})
 				html += '<a class="pro"><span></span></a>';
@@ -79,6 +79,25 @@ $(function(argument){
 				var _this = $(this);
 				_this.find(".pro").removeClass("on");
 			})
+			$(".container").on("click", 'a', function(){
+				var _this = $(this);
+				if(_this.data("disabled")) {
+					swal({
+						title: "很抱歉",
+						text: "项目暂未上线，敬请期待！",
+						type: "warning",
+						confirmButtonColor: "#DD6B55",
+						confirmButtonText: "好吧",
+						closeOnConfirm: false
+					});
+					return;
+				}
+				_this.attr('href', _this.data('href'));
+				
+				
+			})
+
+
 		}
 	}
 	

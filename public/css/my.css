@@ -27,7 +27,7 @@ canvas{
 }
 
 .container{
-	width: 1000px;
+	width: 1100px;
 	margin: 0 auto;
 	/* overflow: hidden; */
 	height: 100%;
@@ -42,15 +42,12 @@ canvas{
 	
 	margin-top: -250px;
 
-	background-image: url(../img/gear01.png);
+	background-image: url(../imgs/gear01.png);
 	background-size: 100%;
 	border-radius: 100%;
 	overflow: hidden;
 	
 
-}
-.gear-wrapper.gw-02{
-	margin-left: -10px;
 }
 
 /*顺时针旋转*/
@@ -123,6 +120,9 @@ canvas{
 	transform-origin: 200px 35px;
 	transform: rotateZ(0deg);
 	-webkit-animation: bs linear 2s 1.3s infinite;
+	animation: bs linear 2s 1.3s infinite;
+	overflow: hidden;
+	border: 1px solid #000;
 
 }
 
@@ -162,12 +162,17 @@ canvas{
 
 }
 
-.gear-inner .project:hover{
-	background: #333333;
+.gear-inner .project{
+	cursor: pointer;
 }
 
 .gear-inner .project .name{
 	display: block;
+	transform-origin: 35px 35px;
+}
+
+.gear-inner .project .name img{
+	width: 100%;
 }
 
 
@@ -186,4 +191,18 @@ canvas{
   }
 }
 
+
+@keyframes bs {
+  0% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 0px 0 #b2ff1a;
+  }
+
+  50% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 20px 0 #1affff;
+  }
+
+  100% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 0px 0 #b2ff1a;
+  }
+}
 
