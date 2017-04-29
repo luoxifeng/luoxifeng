@@ -31,10 +31,9 @@ var proArr1 = [
 var proArr2 = [
 	{
 		icon: "imgs/utils.png",
-		name: "前端工具(很快上线)",
+		name: "前端工具",
 		href: "http://feutils.luoxifeng.com:2040/",
 		back: "#333333",
-		usable: false
 	},
 	{
 		icon: "imgs/vue.png",
